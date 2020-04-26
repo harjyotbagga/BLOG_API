@@ -12,7 +12,7 @@ class RegisterView(APIView):
         if serializer.is_valid():
             serializer.save()
             user = User.objects.get(username=serializer.data['username'])
-            author = Author.objects.create(user=user)
-            return Response(serializer.data)
+            Author.objects.create(user=user)
+            return Response({'detail': 'The author has successfully been created.'}, status=201)
         else:
-            return Response(serializer.errors)
+            return Response(serializer.errors, status=400)

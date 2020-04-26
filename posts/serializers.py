@@ -4,4 +4,7 @@ from .models import *
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['author', 'title', 'content', 'timestamp']
+        fields = ['title', 'content', 'timestamp']
+    # def create(self, validated_data):
+    #     author = request.user.pk
+    #     return Post.objects.create(author=author)
