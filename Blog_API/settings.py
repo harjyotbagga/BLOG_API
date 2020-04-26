@@ -25,6 +25,7 @@ SECRET_KEY = '6k6o&%a_p9og5w4^+eu2@^yuljp=8f_!_2zq@d#$h0!&gqq_+j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Added 127.0.01 to access the API via Postman
 ALLOWED_HOSTS = ['localhost', '127.0.01',]
 
 
