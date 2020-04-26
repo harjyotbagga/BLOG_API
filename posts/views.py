@@ -9,7 +9,6 @@ from rest_framework.permissions import IsAuthenticated
 
 class PostView(APIView):
     permission_classes = [IsAuthenticated, ]
-    # TODO: Check hoy is it done in POSTMAN (API-Key)
     def get(self, request, *args, **kwargs):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True)

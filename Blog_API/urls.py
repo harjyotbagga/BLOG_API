@@ -20,4 +20,5 @@ import authors.urls, posts.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(posts.urls)),
+    path('author/', include(authors.urls)),
 ]
