@@ -11,7 +11,8 @@ class RegisterView(APIView):
         serializer =RegisterSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            print(serializer.data)
+            user = User.objects.get(username=serializer.data['username'])
+            author = Author.objects.create(user=user)
             return Response(serializer.data)
         else:
             return Response(serializer.errors)
